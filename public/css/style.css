@@ -1,0 +1,14 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+.barra-logo{
+    width: 100%;
+    height: auto;
+    background-color: #308AFF;
+}
+
+.barra-logo img{
+    display: block;
+}
