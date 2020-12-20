@@ -1,3 +1,8 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #EDEDEF;
+}
+
 /* Fix de correção do float */
 
 .fix-content::after, .fix-content::before{
@@ -48,8 +53,10 @@
 
 /* Pagina principal e form */
 
-.content{ 
+.container{ 
     width: 80%;
     margin: 0 auto;
 }
+
+
 

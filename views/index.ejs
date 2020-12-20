@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <title>CD 1250 - Vem  Ser Feliz</title>
-</head>
+<%- include ('partials/head') %>
 <body>
-    <header class="main-header fix-content">
-        <div class="main-header-div-logo">
-            <a href="/" class="main-header-logo-link">
-                <img class="main-header-logo-img" src="img/logo-barra-magalu.png" alt="logo magalu">
-            </a>
-        </div>
-        <div class="main-header-div-title">
-            <h1>Controle De Coletores Magalu 1250</h1>
-        </div>
+    <%- include ('partials/header.ejs') %>
+    <div class="container fix-content" >
         
-    </header>
-    <div class="content">
+        <form class="form-login" action="/login" method="POST">
+            <p>Login</p>
+            <input class="form-login-user" type="text" name="user" id="user">
+            
+            <input class="form-login-password" type="password" name="password" id="password">
+
+            <input type='submit' value="Login" id="btn-login">
+        </form>
+        <div class="main-div-coletor">
+            <img src="img/2.png" alt="imagem coletor zebra">
+        </div>
         
     </div>
 </body>

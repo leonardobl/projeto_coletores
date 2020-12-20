@@ -1,9 +1,15 @@
 const express = require('express')
 const app = express()
+const Connection = require('./database/Connection')
 
 
 app.use(express.static('public'))
 app.set("view engine", "ejs")
+
+
+Connection.authenticate().then( ()=> { 
+    console.log('Conectado ao banco de dados !')
+} )
 
 
 
