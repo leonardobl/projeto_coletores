@@ -1,14 +1,55 @@
-*{
-    padding: 0;
-    margin: 0;
+/* Fix de correção do float */
+
+.fix-content::after, .fix-content::before{
+    clear: both;
+    content: '';
+    display: block;    
 }
 
-.barra-logo{
-    width: 100%;
-    height: auto;
+
+/* Header */
+
+.main-header{
     background-color: #308AFF;
+    box-sizing: border-box;
 }
 
-.barra-logo img{
-    display: block;
+.main-header-div-logo{
+    width: 20%;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
 }
+
+.main-header-div-title{
+    width: 80%;
+    float: right;
+    box-sizing: border-box;
+}
+
+.main-header-div-title h1{
+    margin: 0;
+    line-height: 76px;
+    text-align: center;
+    color: white;
+}
+
+.main-header-logo-img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.main-header-logo-link{
+    display: inline-block;
+    
+}
+
+
+/* Pagina principal e form */
+
+.content{ 
+    width: 80%;
+    margin: 0 auto;
+}
+
