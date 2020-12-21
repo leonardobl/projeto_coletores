@@ -15,6 +15,18 @@
     outline: none;
     padding: 15px 10px 15px 50px;
     box-sizing: border-box;
+
+    font-size: 18px;
+    color: #8195a7;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+.inp::placeholder{
+    font-size: 18px;
+    color: #b8c0c7;
+    letter-spacing: 2px;
+    font-weight: bolder;
 }
 
 .form-login p{
@@ -76,13 +88,13 @@ hr{
 .icon-user{
     color: #b8c0c7;
     position: absolute;
-    top: 10px;
+    top: 12px;
     left: 15px;
 }
 
 .icon-lock{
     color: #b8c0c7;
     position: absolute;
-    top: 60px;
+    top: 62px;
     left: 15px;
 }

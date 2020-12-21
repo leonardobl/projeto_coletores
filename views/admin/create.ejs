@@ -1,0 +1,34 @@
+<%- include ('../partials/head') %>
+<body>
+    <%- include ('../partials/header.ejs') %>
+    <div class="container fix-content" >
+        
+        <div class="main-div-form">
+            <form class="form-login" action="/login" method="POST">
+                <p>Novo Usuario</p>
+                <div class="main-div-inp">
+                    <span class="material-icons icon-user">
+                        account_circle
+                    </span>
+                    <input placeholder="Usuario" class="inp inp-login-user" type="text" name="user" id="user">
+                    <hr>
+                    <span class="material-icons icon-lock">
+                        lock
+                    </span>
+                    <input placeholder="Senha" class="inp inp-login-password" type="password" name="password" id="password">
+                </div>
+                <div class='main-div-btn'>
+                    <input type='submit' value="Gravar" class="btn-login">
+                    <input type='submit' value="Alterar" class="btn-login btn-edit">
+                </div>
+                
+            </form>
+        </div>
+        
+        <div class="main-div-coletor">
+            <img src="/img/4.png" alt="imagem coletor zebra">
+        </div>
+        
+    </div>
+</body>
+</html>

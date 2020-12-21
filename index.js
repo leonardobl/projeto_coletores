@@ -17,6 +17,10 @@ app.get('/', (req, res)=> {
     res.render('index')
 })
 
+app.get('/admin/create', (req, res)=> {
+    res.render('admin/create')
+})
+
 
 
 app.listen(8000, ()=> {
