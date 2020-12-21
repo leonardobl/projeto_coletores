@@ -4,7 +4,7 @@
 
 .main-div-coletor{
     float: right;
-    width: 50%;
+    width: 40%;
     box-sizing: border-box;
     
 }
@@ -13,9 +13,8 @@
     display: block;
     border: none;
     outline: none;
-    padding: 15px 10px 15px 50px;
+    padding: 15px 0 15px 50px;
     box-sizing: border-box;
-
     font-size: 18px;
     color: #8195a7;
     letter-spacing: 2px;
@@ -54,7 +53,7 @@ hr{
 
 .main-div-form{
     float: left;
-    width: 50%;
+    width: 60%;
     box-sizing: border-box;
 }
 
@@ -107,7 +106,14 @@ hr{
 .icon-lock{
     color: #b8c0c7;
     position: absolute;
-    top: 62px;
+    top: 114px;
+    left: 15px;
+}
+
+.icon-name{
+    color: #b8c0c7;
+    position: absolute;
+    top:64px;
     left: 15px;
 }
 
