@@ -81,6 +81,18 @@ hr{
     outline: none;
 }
 
+
+.main-div-btn{
+    text-align: justify;
+}
+
+.main-div-btn::after{
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+}
+
+
 .btn-login:hover{
     background-color:#a3afb9;
 }
