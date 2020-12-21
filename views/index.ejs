@@ -3,14 +3,19 @@
     <%- include ('partials/header.ejs') %>
     <div class="container fix-content" >
         
-        <form class="form-login" action="/login" method="POST">
-            <p>Login</p>
-            <input class="form-login-user" type="text" name="user" id="user">
-            
-            <input class="form-login-password" type="password" name="password" id="password">
-
-            <input type='submit' value="Login" id="btn-login">
-        </form>
+        <div class="main-div-form">
+            <form class="form-login" action="/login" method="POST">
+                <p>Login</p>
+                <div class="main-div-inp">
+                    <input placeholder="Usuario" class="inp inp-login-user" type="text" name="user" id="user">
+                    <hr>
+                    <input placeholder="Senha" class="inp inp-login-password" type="password" name="password" id="password">
+                </div>
+                
+                <input type='submit' value="Logar" class="btn-login">
+            </form>
+        </div>
+        
         <div class="main-div-coletor">
             <img src="img/2.png" alt="imagem coletor zebra">
         </div>
