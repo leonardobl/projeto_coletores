@@ -13,7 +13,8 @@
     display: block;
     border: none;
     outline: none;
-    padding: 10px 20px;
+    padding: 15px 10px 15px 50px;
+    box-sizing: border-box;
 }
 
 .form-login p{
@@ -29,11 +30,14 @@ hr{
     border: 1px solid #EDEDEF;
     background-color: #EDEDEF;
     border-radius: 1px;
+    margin: 0 auto;
 }
 
 .main-div-inp{
     background-color: white;
     margin-bottom: 10px;
+    box-sizing: border-box;
+    position: relative;
 }
 
 .main-div-form{
@@ -62,4 +66,23 @@ hr{
     font-size: 18px;
     font-weight: bolder;
     letter-spacing: 2px;
+    outline: none;
+}
+
+.btn-login:hover{
+    background-color:#a3afb9;
+}
+
+.icon-user{
+    color: #b8c0c7;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+}
+
+.icon-lock{
+    color: #b8c0c7;
+    position: absolute;
+    top: 60px;
+    left: 15px;
 }
