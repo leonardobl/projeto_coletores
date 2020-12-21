@@ -6,7 +6,6 @@
     float: right;
     width: 40%;
     box-sizing: border-box;
-    
 }
 
 .inp{
@@ -60,12 +59,13 @@ hr{
 
 .form-login{
     width: 50%;
-    margin: 150px auto 0 auto;
+    margin: 100px auto 0 auto;
 }
 
 .main-div-coletor img{
     max-width: 100%;
     display: block;
+    margin: 0 auto;
 }
 
 .btn-login{

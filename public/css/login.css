@@ -13,7 +13,7 @@
     display: block;
     border: none;
     outline: none;
-    padding: 15px 10px 15px 50px;
+    padding: 15px 15px 15px 50px;
     box-sizing: border-box;
 
     font-size: 18px;
@@ -56,16 +56,14 @@ hr{
     float: left;
     width: 50%;
     box-sizing: border-box;
-}
-
-.form-login{
-    width: 50%;
-    margin: 150px auto 0 auto;
+    padding: 0 120px;
+    margin-top: 50px;
 }
 
 .main-div-coletor img{
     max-width: 100%;
     display: block;
+    margin:0 auto;
 }
 
 .btn-login{
