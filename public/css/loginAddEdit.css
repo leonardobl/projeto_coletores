@@ -12,8 +12,9 @@
 .inp{
     display: block;
     border: none;
+    width: 100%;
     outline: none;
-    padding: 15px 0 15px 50px;
+    padding: 15px 50px;
     box-sizing: border-box;
     font-size: 18px;
     color: #8195a7;
