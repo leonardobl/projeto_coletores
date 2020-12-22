@@ -1,0 +1,44 @@
+.form-login{
+    width: 600px;
+    margin-top: 50px;
+}
+
+.icon-name{
+    top: 130px;
+}
+
+.icon-lock{
+    top: 188px;
+}
+
+.table-user{
+    padding-top: 100px;
+    text-align: center;
+}
+
+.table-user h2{
+    font-weight: bolder;
+    border-bottom: 2px solid  #afafaf;
+    display: inline;
+    color:#afafaf;
+}
+
+
+table{
+    width: 100%;
+    margin-top: 60px;
+}
+
+td{
+    color: #afafaf;
+    padding: 10px 0;
+}
+
+th, td{
+    border-bottom: 1px solid black;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+

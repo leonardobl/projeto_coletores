@@ -18,51 +18,28 @@
     
     <div class="container">
         
-        <form class="form-login" action="/user/save" method="POST">
-            <p>Cadastro De Usuario</p>
+        <form class="form-login" action="/user/edit" method="POST">
+            <p>Alteração De Usuario</p>
             <span class="material-icons icon-user">
                 account_circle
             </span>
-            <input placeholder="Usuario" class="inp inp-login-user" type="text" name="login" id="login">
+            <input placeholder="Usuario" class="inp inp-login-user" type="text" name="user" id="user">
             <hr>
-            
+
             <span class="material-icons icon-name">
                 assignment_ind
-            </span>
+                </span>
             <input placeholder="Nome Completo" class="inp inp-login-name" type="text" name="name" id="name">
             <hr>
-            
-            
+
+           
             <span class="material-icons icon-lock">
                 lock
             </span>
             <input placeholder="Senha" class="inp inp-login-password" type="password" name="password" id="password">
-            
-            <input type='submit' value="Cadastrar" class="btn-login">
-            
+           
+            <input type='submit' value="Alterar" class="btn-login">
         </form>
-        <div class="table-user">
-            <h2>Lista De Usuarios Cadastrados</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Login</th>
-                        <th>Nome</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>leb_lima</td>
-                        <td>Leonardo Bernardo Lima</td>
-                        <td>
-                            <button>Alterar</button>
-                            <button>Excluir</button>
-                        </td>
-                    </tr>  
-                </tbody>
-            </table>
-        </div>
         
     </div>
     

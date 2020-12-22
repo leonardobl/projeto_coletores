@@ -21,6 +21,10 @@ app.get('/admin/create', (req, res)=> {
     res.render('admin/create')
 })
 
+app.get('/admin/edit', (req, res)=> {
+    res.render('admin/edit')
+})
+
 
 
 app.listen(8000, ()=> {
