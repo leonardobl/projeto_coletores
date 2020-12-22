@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const Connection = require('./database/Connection')
+const Users = require('./database/users')
 
 
 app.use(express.static('public'))

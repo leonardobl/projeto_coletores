@@ -16,6 +16,6 @@ const Users = Connection.define('Users', {
     }
 })
 
-Users.sync({force: false})
+Users.sync({force: false}).then( ()=> console.log('Tabela Usuarios Criada') )
 
 module.exports = Users
