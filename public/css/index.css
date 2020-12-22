@@ -1,0 +1,130 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #EDEDEF;
+}
+
+/* Fix de correção do float */
+
+.fix-content::after, .fix-content::before{
+    clear: both;
+    content: '';
+    display: block;    
+}
+
+
+/* Header */
+
+.main-header{
+    background-color: #308AFF;
+    box-sizing: border-box;
+}
+
+.main-header-div-logo{
+    width: 20%;
+    float: left;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.main-header-div-title{
+    width: 80%;
+    float: right;
+    box-sizing: border-box;
+}
+
+.main-header-div-title h1{
+    margin: 0;
+    line-height: 76px;
+    text-align: center;
+    color: white;
+}
+
+.main-header-logo-img{
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.main-header-logo-link{
+    display: inline-block;
+    
+}
+
+
+/* Pagina principal e form */
+
+.container{ 
+    width: 80%;
+    margin: 0 auto;
+}
+
+hr{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-login{
+    box-sizing: border-box;
+    width: 350px;
+    margin: 150px auto 0 auto;
+    position: relative;
+}
+
+.form-login p{
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    font-size: 30px;
+    margin: 0 0 20px 0;
+    color:#afafaf;
+}
+
+.inp{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 50px;
+    border: none;
+    outline: none;
+    font-weight: bolder;
+    letter-spacing: 2px;
+    color:#afafaf;
+}
+
+.inp::placeholder{
+    color: #afafaf;
+}
+
+.material-icons{
+    position: absolute;
+    left: 10px;
+    color:#afafaf;
+}
+
+.icon-user{
+    top: 70px;
+    
+}
+
+.icon-lock{
+    top: 129px;
+}
+
+.btn-login{
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    border: none;
+    color: white;
+    background-color:#afafaf;
+    padding: 20px;
+    font-size: 20px;
+    box-sizing: border-box;
+    outline: none;
+    font-weight: bolder;
+    letter-spacing: 2px;
+}
+
+.btn-login:hover{
+    background-color: #9e9d9d;
+}

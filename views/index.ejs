@@ -6,40 +6,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    rel="stylesheet">
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/login.css">
     <title>CD 1250 - Vem  Ser Feliz</title>
 </head>
 <body>
     <%- include ('partials/header.ejs') %>
-    <div class="container fix-content" >
+    
+    <div class="container">
         
-        <div class="main-div-form">
-            <form class="form-login" action="/login" method="POST">
-                <p>Login</p>
-                <div class="main-div-inp">
-                    <span class="material-icons icon-user">
-                        account_circle
-                    </span>
-                    <input placeholder="Usuario" class="inp inp-login-user" type="text" name="user" id="user">
-                    <hr>
-                    <span class="material-icons icon-lock">
-                        lock
-                    </span>
-                    <input placeholder="Senha" class="inp inp-login-password" type="password" name="password" id="password">
-                </div>
-                
-                <input type='submit' value="Logar" class="btn-login">
-                
-            </form>
-        </div>
-        
-        <div class="main-div-coletor">
-            <img src="img/2.png" alt="imagem coletor zebra">
-        </div>
+        <form class="form-login" action="/login" method="POST">
+            <p>Login</p>
+            <span class="material-icons icon-user">
+                account_circle
+            </span>
+            <input placeholder="Usuario" class="inp inp-login-user" type="text" name="user" id="user">
+            <hr>
+            <span class="material-icons icon-lock">
+                lock
+            </span>
+            <input placeholder="Senha" class="inp inp-login-password" type="password" name="password" id="password">
+            <input type='submit' value="Logar" class="btn-login">
+        </form>
         
     </div>
+    
 </body>
 </html>
