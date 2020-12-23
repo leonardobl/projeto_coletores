@@ -2,24 +2,39 @@ const express = require('express')
 const app = express()
 const Connection = require('./database/Connection')
 const Users = require('./database/users')
+const bcrypt = require('bcryptjs')
+const bodyparser = require('body-parser')
 
 
 app.use(express.static('public'))
 app.set("view engine", "ejs")
+app.use(bodyparser.urlencoded({ extended: false }))
 
 
 Connection.authenticate().then( ()=> { 
     console.log('Conectado ao banco de dados !')
 } )
 
-
+app.post('/user/save', (req, res)=> {
+    let login = req.body.login
+    let name = req.body.name
+    let password = req.body.password
+    let salt = bcrypt.genSaltSync(10)
+    let hash = bcrypt.hashSync(password, salt)
+    
+    Users.create({ login, name, password: hash }).then( ()=> {
+        res.redirect('/')
+    })
+})
 
 app.get('/', (req, res)=> {
     res.render('index')
 })
 
 app.get('/admin/create', (req, res)=> {
-    res.render('admin/create')
+    Users.findAll().then(users =>{
+        res.render('admin/create', { users })
+    })
 })
 
 app.get('/admin/edit', (req, res)=> {
