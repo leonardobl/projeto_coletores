@@ -27,7 +27,7 @@ app.post('/user/save', (req, res)=> {
         
         if(user){
             if(user.login == login || user.name == name){
-               res.redirect('/admin/create')
+                res.redirect('/admin/create')
             }
         }else{
             Users.create({ login, name, password: hash }).then( ()=> {
@@ -35,8 +35,6 @@ app.post('/user/save', (req, res)=> {
             })}
             
         } )
-        
-        
     })
     
     app.get('/', (req, res)=> {
@@ -49,9 +47,27 @@ app.post('/user/save', (req, res)=> {
         })
     })
     
-    app.get('/admin/edit', (req, res)=> {
-        res.render('admin/edit')
+    app.get('/user/edit/:id', (req, res)=> {
+        let id = req.params.id
+        Users.findByPk(id).then( user => {
+            res.render('admin/edit', { user })
+        } )
     })
+    
+    app.post('/user/update', (req, res)=> {
+        
+        let id = req.body.id
+        let login = req.body.login
+        let name = req.body.name
+        let password = req.body.password
+        let salt = bcrypt.genSaltSync(10)
+        let hash = bcrypt.hashSync(password, salt)
+
+        Users.update({login, name, password: hash}, { where:{ id } }).then( ()=> {
+            res.redirect('/admin/create')
+        } )
+    })
+    
     
     
     

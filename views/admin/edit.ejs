@@ -18,27 +18,29 @@
     
     <div class="container">
         
-        <form class="form-login" action="/user/edit" method="POST">
-            <p>Alteração De Usuario</p>
+        <form class="form-login" action="/user/update" method="POST">
+            <p>Alterar Usuario</p>
+            
             <span class="material-icons icon-user">
                 account_circle
             </span>
-            <input placeholder="Usuario" class="inp inp-login-user" type="text" name="user" id="user">
+            <input value="<%= user.login %>" class="inp inp-login-user" type="text" name="login" id="login">
             <hr>
-
+            
             <span class="material-icons icon-name">
                 assignment_ind
-                </span>
-            <input placeholder="Nome Completo" class="inp inp-login-name" type="text" name="name" id="name">
+            </span>
+            <input value="<%= user.name %>"  class="inp inp-login-name" type="text" name="name" id="name">
             <hr>
-
-           
+            
             <span class="material-icons icon-lock">
                 lock
             </span>
-            <input placeholder="Senha" class="inp inp-login-password" type="password" name="password" id="password">
-           
+            <input required placeholder="Senha" class="inp inp-login-password" type="password" name="password" id="password">
+            
+            <input type="hidden" name="id" value="<%= user.id %>">
             <input type='submit' value="Alterar" class="btn-login">
+            
         </form>
         
     </div>
