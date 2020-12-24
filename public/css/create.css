@@ -18,7 +18,6 @@
 
 .table-user h2{
     font-weight: bolder;
-    border-bottom: 2px solid  #afafaf;
     display: inline;
     color:#afafaf;
 }
@@ -41,4 +40,9 @@ th, td{
     font-weight: bolder;
 }
 
+
+button a{
+    text-decoration: none;
+    color: inherit;
+}
 

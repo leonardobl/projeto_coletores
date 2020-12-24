@@ -8,6 +8,7 @@ const bodyparser = require('body-parser')
 
 app.use(express.static('public'))
 app.set("view engine", "ejs")
+app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: false }))
 
 
@@ -22,27 +23,38 @@ app.post('/user/save', (req, res)=> {
     let salt = bcrypt.genSaltSync(10)
     let hash = bcrypt.hashSync(password, salt)
     
-    Users.create({ login, name, password: hash }).then( ()=> {
-        res.redirect('/')
+    Users.findOne({ raw: false, where:{ login } }).then( user => {
+        
+        if(user){
+            if(user.login == login || user.name == name){
+               res.redirect('/admin/create')
+            }
+        }else{
+            Users.create({ login, name, password: hash }).then( ()=> {
+                res.redirect('/admin/create')
+            })}
+            
+        } )
+        
+        
     })
-})
-
-app.get('/', (req, res)=> {
-    res.render('index')
-})
-
-app.get('/admin/create', (req, res)=> {
-    Users.findAll().then(users =>{
-        res.render('admin/create', { users })
+    
+    app.get('/', (req, res)=> {
+        res.render('index')
     })
-})
-
-app.get('/admin/edit', (req, res)=> {
-    res.render('admin/edit')
-})
-
-
-
-app.listen(8000, ()=> {
-    console.log('SERVIDOR RODANDO !!!')
-})
+    
+    app.get('/admin/create', (req, res)=> {
+        Users.findAll().then(users =>{
+            res.render('admin/create', { users })
+        })
+    })
+    
+    app.get('/admin/edit', (req, res)=> {
+        res.render('admin/edit')
+    })
+    
+    
+    
+    app.listen(8000, ()=> {
+        console.log('SERVIDOR RODANDO !!!')
+    })

@@ -20,6 +20,7 @@
         
         <form class="form-login" action="/user/save" method="POST">
             <p>Cadastro De Usuario</p>
+            
             <span class="material-icons icon-user">
                 account_circle
             </span>
@@ -57,11 +58,8 @@
                             <td><%= user.login %></td>
                             <td><%= user.name %></td>
                             <td>
-                                <form action="#">
-                                    <input type="submit" value="Alterar">
-                                    <input type="submit" value="Excluir">
-                                    <input type="hidden" name="id" value="<%= user.id %>">
-                                </form>
+                                <button><a href="#">Alterar</a></button>
+                                <button><a href="#">Excluir</a></button>
                             </td>
                         </tr>
                         <% }) %>
