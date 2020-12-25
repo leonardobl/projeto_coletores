@@ -38,6 +38,15 @@ app.post('/user/save', (req, res)=> {
             
         } )
     })
+
+    app.get('/user/delete/:id', (req, res)=> {
+        let id = req.params.id
+        Users.destroy({ where:{ id } }).then( ()=>{
+            res.redirect('/admin/create')
+        } )
+        
+    })
+
     
     app.get('/', (req, res)=> {
         res.render('index')

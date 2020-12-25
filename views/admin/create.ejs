@@ -59,7 +59,9 @@
                             <td style="text-transform: capitalize;"><%= user.name %></td>
                             <td>
                                 <button><a href="/user/edit/<%= user.id %>">Alterar</a></button>
-                                <button><a href="/user/delete/<%= user.id %>">Excluir</a></button>
+                                <form onsubmit="send(this)" style="display: inline;" action="/user/delete/<%= user.id %>" method="GET">
+                                    <input type="submit" value="Excluir">
+                                </form>
                             </td>
                         </tr>
                         <% }) %>
@@ -72,10 +74,15 @@
     </body>
     <script>
         
-        function send(){
-            this.preventDefault()
-            console.log(event, this)
-            
+        function send(this_){
+            event.preventDefault()
+            resposta = confirm('Deseja Realmente Excluir')
+            if(resposta){
+                this_.submit()
+            }
+            else{
+                return
+            }
         }
         
     </script>
