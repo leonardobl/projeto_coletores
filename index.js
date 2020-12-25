@@ -18,7 +18,9 @@ Connection.authenticate().then( ()=> {
 
 app.post('/user/save', (req, res)=> {
     let login = req.body.login
+    login = login.toLowerCase()
     let name = req.body.name
+    name = name.toLowerCase()
     let password = req.body.password
     let salt = bcrypt.genSaltSync(10)
     let hash = bcrypt.hashSync(password, salt)
