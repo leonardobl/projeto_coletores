@@ -4,12 +4,15 @@ const Connection = require('./database/Connection')
 const Users = require('./database/users')
 const bcrypt = require('bcryptjs')
 const bodyparser = require('body-parser')
+const session = require('express-session')
+const adminAuth = require('./middlewares/adminAuth')
 
 
 app.use(express.static('public'))
 app.set("view engine", "ejs")
 app.use(bodyparser.json())
 app.use(bodyparser.urlencoded({ extended: false }))
+app.use(session( { secret: "magalu", cookie: { maxAge: 60000 } } ))
 
 
 Connection.authenticate().then( ()=> { 
@@ -52,13 +55,13 @@ app.post('/user/save', (req, res)=> {
         res.render('index')
     })
     
-    app.get('/admin/create', (req, res)=> {
+    app.get('/admin/create', adminAuth, (req, res)=> {
         Users.findAll().then(users =>{
             res.render('admin/create', { users })
         })
     })
     
-    app.get('/user/edit/:id', (req, res)=> {
+    app.get('/user/edit/:id', adminAuth, (req, res)=> {
         let id = req.params.id
         Users.findByPk(id).then( user => {
             res.render('admin/edit', { user })
@@ -79,7 +82,31 @@ app.post('/user/save', (req, res)=> {
         } )
     })
     
-    
+
+    app.post('/login', (req, res)=> {
+        let login = req.body.login
+        let password = req.body.password
+
+        Users.findOne({ where: { login }, raw: true }).then( user =>{
+            
+            if(user){
+                let correct = bcrypt.compareSync(password, user.password)
+                
+                if(correct){
+                    req.session.user = {
+                        id: user.id,
+                        login: user.login,
+                        name : user.name
+                    }
+                    res.render('admin/index', { user })
+                }else{
+                    res.redirect('/')
+                }
+            }else{
+                res.redirect('/')
+            }
+        })
+    })
     
     
     app.listen(8000, ()=> {
